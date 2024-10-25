@@ -19,7 +19,7 @@ import cianparser as cian
 #   print(i)
 
 
-list_1 = ["Клин"]
+list_1 = ['Егорьевск','Ступино','Руза','Электросталь']
 
 # бронницы и балашиха есть ("Бронницы", "Балашиха", "Видное", "Волоколамск", "Воскресенск", "Высоковск", "Верея", "Голицыно", "Дзержинский", "Долгопрудный",
 # "Дубна", "Дмитров", "Домодедово", "Дрезна", "Дедовск", "Егорьевск", "Егорьевск", "Жуковский", "Звенигород", "Зарайск", "Истра",
@@ -29,7 +29,73 @@ list_1 = ["Клин"]
 #                   "Лосино-Петровский", "Луховицы", "Люберцы", "Можайск", "Мытищи", "Наро-Фоминск", "Ногинск", , "Одинцово", "Озёры", "Подольск", "Протвино", "Пущино",]
 
 # list_3 = ["Реутов", "Рошаль", "Раменское", "Руза", "Серпухов", "Сергиев Посад", "Солнечногорск", "Ступино", "Старая Купавна", "Талдом",
-#                   "Фрязино", "Химки", "Хотьково", "Черноголовка", "Чехов", "Шатура", "Щёлково", "Электросталь", "Электрогорск", "Электроугли", , "Павловский Посад", "Пересвет", "Пушкино"]
+#                   "Фрязино", "Химки", "Хотьково", "Черноголовка", "Чехов", "Шатура", "Щёлково", "", "Электрогорск", "Электроугли", , "Павловский Посад", "Пересвет", "Пушкино"]
+
+ 
+town_parser = cian.CianParser(location='Долгопрудный')
+rooms = [1, 2, 3, 'studio']
+for room in rooms:
+  print('Парсинг города Долгопрудный, комнат:', room)
+  data = town_parser.get_flats(
+  deal_type='sale',
+  rooms=room,
+  with_saving_csv=True,
+  additional_settings={"start_page":1, "end_page":11},
+  with_extra_data=True)
+  sleep(30)
+sleep(60)
+
+town_parser = cian.CianParser(location='Реутов')
+rooms = [1, 2, 3, 'studio']
+for room in rooms:
+  print('Парсинг города Реутов, комнат:', room)
+  data = town_parser.get_flats(
+  deal_type='sale',
+  rooms=room,
+  with_saving_csv=True,
+  additional_settings={"start_page":1, "end_page":20},
+  with_extra_data=True)
+  sleep(30)
+sleep(60)
+
+town_parser = cian.CianParser(location='Домодедово')
+rooms = [1, 2, 3, 4, 5, 'studio']
+for room in rooms:
+  print('Парсинг города Домодедово, комнат:', room)
+  data = town_parser.get_flats(
+  deal_type='sale',
+  rooms=room,
+  with_saving_csv=True,
+  additional_settings={"start_page":1, "end_page":25},
+  with_extra_data=True)
+  sleep(30)
+sleep(60)
+
+town_parser = cian.CianParser(location='Щёлково')
+rooms = [1, 2, 3, 'studio']
+for room in rooms:
+  print('Парсинг города Щёлково, комнат:', room)
+  data = town_parser.get_flats(
+  deal_type='sale',
+  rooms=room,
+  with_saving_csv=True,
+  additional_settings={"start_page":1, "end_page":15},
+  with_extra_data=True)
+  sleep(30)
+sleep(60)
+
+town_parser = cian.CianParser(location='Подольск')
+rooms = [1, 2, 3, 'studio']
+for room in rooms:
+  print('Парсинг города Подольск, комнат:', room)
+  data = town_parser.get_flats(
+  deal_type='sale',
+  rooms=room,
+  with_saving_csv=True,
+  additional_settings={"start_page":1, "end_page":18},
+  with_extra_data=True)
+  sleep(30)
+sleep(60)
 
 # for town in list_1:
 #   town_parser = cian.CianParser(location=town)
@@ -39,18 +105,17 @@ list_1 = ["Клин"]
 #       deal_type='sale',
 #       rooms=room,
 #       with_saving_csv=True,
-#       additional_settings={"start_page":1, "end_page":25},
+#       additional_settings={"start_page":1, "end_page":3},
 #       with_extra_data=True)
 #     sleep(30)
 # sleep(60)
 
-#прогнать список еще раз только по однушкам
 
-for town in list_1:
-  town_parser = cian.CianParser(location=town)
-  data = town_parser.get_flats(
-      deal_type='sale',
-      rooms=1,
-      with_saving_csv=True,
-      additional_settings={"start_page":1, "end_page":25},
-      with_extra_data=True)
+# town_parser = cian.CianParser(location='Егорьевск')
+# data = town_parser.get_flats(
+#   deal_type='sale',
+#   rooms=2,
+#   with_saving_csv=True,   
+#   additional_settings={"start_page":1, "end_page":10},
+#   with_extra_data=True)
+# sleep(30)
