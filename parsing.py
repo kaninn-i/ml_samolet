@@ -3,15 +3,15 @@ import cianparser as cian
 
 moscow_parser = cian.CianParser(location='Москва')
 rooms = [1, 2, 3, 4, 5, 'studio']
-n = 25
+n = 55
 for room in rooms:
-  while n < 54:
+  while n < 75:
     print('Парсинг города Москва, комнат:', room, "страницы:", n + 1, "-", n + 5)
     data = moscow_parser.get_flats(
     deal_type='sale',
     rooms=room,
     with_saving_csv=True,
-    additional_settings={"start_page": n + 1, "end_page": n + 5, "sort_by": "creation_data_from_older_to_newer"},
+    additional_settings={"start_page": n + 1, "end_page": n + 5},
     with_extra_data=True)
     n += 5
     sleep(30)
