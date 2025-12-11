@@ -36,10 +36,9 @@
 ```bash
 # 1. Клонируйте репозиторий
 git clone https://github.com/kaninn-i/ml_samolet
-cd real_estate_parser_app
 
 # 2. Установите зависимости
 pip install -r requirements.txt
 
-# 4. Запустите Streamlit-приложение локально
+# 3. Запустите Streamlit-приложение локально
 streamlit run src/app.py
